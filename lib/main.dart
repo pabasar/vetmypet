@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'detect3.dart';
+import 'detect2.dart';
 
 void main()
 {
@@ -22,6 +22,6 @@ void main()
     ),
     title: "Vet My Pet",
     debugShowCheckedModeBanner: true,
-    home: Detect3(),
+    home: Detect2(),
   ));
 }

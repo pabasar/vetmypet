@@ -1,3 +1,4 @@
+/*
 import 'dart:ui' as ui;
 
 import 'package:firebase_livestream_ml_vision/firebase_livestream_ml_vision.dart';
@@ -208,3 +209,5 @@ class TextDetectorPainter extends CustomPainter {
         oldDelegate.visionText != visionText;
   }
 }
+
+ */
