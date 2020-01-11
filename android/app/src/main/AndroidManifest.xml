@@ -9,6 +9,11 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="vettest2"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data
+            android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+            android:value="label" />
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
