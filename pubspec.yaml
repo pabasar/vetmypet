@@ -26,8 +26,10 @@ dependencies:
   firebase_ml_vision: ^0.9.3+5
   image_picker: ^0.6.2+3
   #firebase_core: ^0.4.3+1
-  firebase_livestream_ml_vision: ^1.0.1
+  #firebase_livestream_ml_vision: ^1.0.1
   url_launcher: ^5.4.1
+  flutter_bluetooth_serial: ^0.2.2
+  scoped_model: ^1.0.1
 
 
 dev_dependencies:
@@ -44,6 +46,8 @@ flutter:
     - assets/automl/dict.txt
     - assets/automl/manifest.json
     - assets/automl/model.tflite
+
+
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

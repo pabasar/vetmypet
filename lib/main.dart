@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import './MainPage.dart';
 import 'detect2.dart';
+import './SelectBondedDevicePage.dart';
+import './ChatPage.dart';
+import 'dart:async';
 
 void main()
 {
@@ -7,7 +11,7 @@ void main()
     initialRoute: '/',
     routes: {
       // When navigating to the "/" route, build the FirstScreen widget.
-      //'/detect3': (context) => Detect3(),
+      '/monitor': (context) => MainPage(),
       // When navigating to the "/second" route, build the SecondScreen widget.
       //'/detect2': (context) => Detect2(),
       // When navigating to the "/second" route, build the SecondScreen widget.
@@ -20,8 +24,12 @@ void main()
       primaryColorDark: Colors.teal[700],
       accentColor: Colors.teal[300],
     ),
-    title: "Vet My Pet",
+    title: "Cannie",
     debugShowCheckedModeBanner: true,
     home: Detect2(),
   ));
 }
+
+
+
+

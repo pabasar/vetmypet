@@ -283,16 +283,32 @@ class _Detect2State extends State<Detect2> {
               child:
               FloatingActionButton(
                   onPressed: () {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) => differentialDialog(context),
-                    );
+                    Navigator.pushNamed(context, '/monitor');
                     // Perform some action
                   },
+                tooltip: 'Monitor',
+                child: Icon(Icons.add_to_home_screen,color: Colors.white,),
+              ),)
+        ),
+
+        Align(
+            alignment: Alignment.bottomRight,
+            child: Container(
+              padding: EdgeInsets.fromLTRB(0, 0, 15, 15),
+              child:
+              FloatingActionButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) => differentialDialog(context),
+                  );
+                  // Perform some action
+                },
                 tooltip: 'Differential Diagnosis',
                 child: Icon(Icons.add_box,color: Colors.white,),
               ),)
         ),
+
 
         Align(
             alignment: Alignment.bottomRight,
@@ -336,7 +352,7 @@ class _Detect2State extends State<Detect2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Vet My Pet',style: new TextStyle(fontWeight: FontWeight.bold),),centerTitle: true,
+        title: Text('Cannie',style: new TextStyle(fontWeight: FontWeight.bold),),centerTitle: true,
       ),
       body: Container(
         child: buttons(),
