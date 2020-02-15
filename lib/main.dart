@@ -24,7 +24,7 @@ void main()
       primaryColorDark: Colors.teal[700],
       accentColor: Colors.teal[300],
     ),
-    title: "Cannie",
+    title: "Vet My Pet",
     debugShowCheckedModeBanner: true,
     home: Detect2(),
   ));

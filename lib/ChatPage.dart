@@ -6,6 +6,8 @@ import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 
 class ChatPage extends StatefulWidget {
   final BluetoothDevice server;
+
+
   
   const ChatPage({this.server});
   
@@ -21,6 +23,7 @@ class _Message {
 }
 
 class _ChatPage extends State<ChatPage> {
+
   static final clientID = 0;
   static final maxMessageLength = 4096 - 3;
   BluetoothConnection connection;
@@ -35,6 +38,7 @@ class _ChatPage extends State<ChatPage> {
   bool get isConnected => connection != null && connection.isConnected;
 
   bool isDisconnecting = false;
+
 
   @override
   void initState() {
@@ -101,6 +105,8 @@ class _ChatPage extends State<ChatPage> {
         mainAxisAlignment: _message.whom == clientID ? MainAxisAlignment.end : MainAxisAlignment.start,
       );
     }).toList();
+
+
     
     return Scaffold(
       appBar: AppBar(
@@ -108,20 +114,21 @@ class _ChatPage extends State<ChatPage> {
           isConnecting ? Text('Connecting to Cannie') :
           isConnected ? Text('Receiving data') :
           Text('Body temperature')
-        )
+        ),
+        automaticallyImplyLeading: false,
       ),
       body: SafeArea(
         child: Column(
           children: <Widget>[
             Flexible(
               child: ListView(
-                padding: const EdgeInsets.all(12.0),
+                //padding: const EdgeInsets.all(12.0),
                 controller: listScrollController,
                 children: list
               )
             ),
             Row(
-              children: <Widget>[
+              /*children: <Widget>[
                 Flexible(
                   child: Container(
                     margin: const EdgeInsets.only(left: 16.0),
@@ -132,7 +139,7 @@ class _ChatPage extends State<ChatPage> {
                   margin: const EdgeInsets.all(8.0),
 
                 ),
-              ]
+              ]*/
             )
           ]
         )
