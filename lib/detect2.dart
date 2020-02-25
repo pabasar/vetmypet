@@ -217,7 +217,7 @@ class _Detect2State extends State<Detect2> {
       ),
       actions: <Widget>[
               RaisedButton(
-                color: Colors.teal[300],
+                color: Color(0xFFe25d5b),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -260,7 +260,7 @@ class _Detect2State extends State<Detect2> {
       ),
       actions: <Widget>[
         RaisedButton(
-          color: Colors.teal[300],
+          color: Color(0xFFe25d5b),
           onPressed: () {
             Navigator.of(context).pop();
           },

@@ -30,6 +30,15 @@ dependencies:
   url_launcher: ^5.4.1
   flutter_bluetooth_serial: ^0.2.2
   scoped_model: ^1.0.1
+  rflutter_alert: ^1.0.3
+  flutter_swiper: ^1.1.6
+  page_indicator: ^0.3.0
+  flutter_cupertino_date_picker: ^1.0.12
+  grouped_buttons: ^1.0.4
+  intl: ^0.16.1
+  datetime_picker_formfield: ^1.0.0
+  flutter_typeahead: ^1.8.0
+  autocomplete_textfield: ^1.7.3
 
 
 dev_dependencies:
@@ -46,6 +55,12 @@ flutter:
     - assets/automl/dict.txt
     - assets/automl/manifest.json
     - assets/automl/model.tflite
+    - images/login.png
+    - images/birthday.png
+    - images/dogweight.png
+    - images/dogbreed.png
+    - images/cat.png
+    - images/dog.png
 
 
 

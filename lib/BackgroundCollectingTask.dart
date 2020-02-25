@@ -16,11 +16,11 @@ class BackgroundCollectingTask extends Model
 {
   static BackgroundCollectingTask of(BuildContext context, {bool rebuildOnChange = false}) =>
       ScopedModel.of<BackgroundCollectingTask>(context, rebuildOnChange: rebuildOnChange);
-  
+
   final BluetoothConnection _connection;
   List<int> _buffer = List<int>();
 
-  // @TODO , Such sample collection in real code should be delegated 
+  // @TODO , Such sample collection in real code should be delegated
   // (via `Stream<DataSample>` preferably) and then saved for later
   // displaying on chart (or even stright prepare for displaying).
   List<DataSample> samples = List<DataSample>(); // @TODO ? should be shrinked at some point, endless colleting data would cause memory shortage.
@@ -36,10 +36,10 @@ class BackgroundCollectingTask extends Model
         int index = _buffer.indexOf('t'.codeUnitAt(0));
         if (index >= 0 && _buffer.length - index >= 7) {
           final DataSample sample = DataSample(
-            temperature1: (_buffer[index + 1] + _buffer[index + 2] / 100),
-            temperature2: (_buffer[index + 3] + _buffer[index + 4] / 100),
-            waterpHlevel: (_buffer[index + 5] + _buffer[index + 6] / 100),
-            timestamp: DateTime.now()
+              temperature1: (_buffer[index + 1] + _buffer[index + 2] / 100),
+              temperature2: (_buffer[index + 3] + _buffer[index + 4] / 100),
+              waterpHlevel: (_buffer[index + 5] + _buffer[index + 6] / 100),
+              timestamp: DateTime.now()
           );
           _buffer.removeRange(0, index + 7);
 

@@ -51,8 +51,8 @@ class _SelectBondedDevicePage extends State<SelectBondedDevicePage> {
     // Setup a list of the bonded devices
     FlutterBluetoothSerial.instance.getBondedDevices().then((List<BluetoothDevice> bondedDevices) {
       setState(() {
-        devices = bondedDevices.map(        
-          (device) => _DeviceWithAvailability(device, widget.checkAvailability ? _DeviceAvailability.maybe : _DeviceAvailability.yes)
+        devices = bondedDevices.map(
+                (device) => _DeviceWithAvailability(device, widget.checkAvailability ? _DeviceAvailability.maybe : _DeviceAvailability.yes)
         ).toList();
       });
     });
@@ -73,13 +73,13 @@ class _SelectBondedDevicePage extends State<SelectBondedDevicePage> {
         while (i.moveNext()) {
           var _device = i.current;
           if (_device.device == r.device) {
-              _device.availability = _DeviceAvailability.yes;
-              _device.rssi = r.rssi;
+            _device.availability = _DeviceAvailability.yes;
+            _device.rssi = r.rssi;
           }
         }
       });
     });
-    
+
     _discoveryStreamSubscription.onDone(() {
       setState(() { _isDiscovering = false; });
     });
@@ -104,24 +104,24 @@ class _SelectBondedDevicePage extends State<SelectBondedDevicePage> {
       },
     )).toList();
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Select device'),
-        actions: <Widget>[
-          (
-            _isDiscovering ? 
-              FittedBox(child: Container(
-                margin: new EdgeInsets.all(16.0),
-                child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white))
-              ))
-            :
-              IconButton(
-                icon: Icon(Icons.replay),
-                onPressed: _restartDiscovery
-              )
-          )
-        ],
-      ),
-      body: ListView(children: list)
+        appBar: AppBar(
+          title: Text('Select device'),
+          actions: <Widget>[
+            (
+                _isDiscovering ?
+                FittedBox(child: Container(
+                    margin: new EdgeInsets.all(16.0),
+                    child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white))
+                ))
+                    :
+                IconButton(
+                    icon: Icon(Icons.replay),
+                    onPressed: _restartDiscovery
+                )
+            )
+          ],
+        ),
+        body: ListView(children: list)
     );
   }
 }
