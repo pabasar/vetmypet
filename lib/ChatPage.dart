@@ -216,7 +216,7 @@ class _ChatPage extends State<ChatPage> {
           context: context,
           type: AlertType.error,
           title: "Not healthy",
-          desc: t3.toString()+"\n"+msg)
+          desc: t3.toString()+" celcius\n"+msg)
           .show();
     }
     else if(t1>=56 && t1<=57)
@@ -227,7 +227,7 @@ class _ChatPage extends State<ChatPage> {
           context: context,
           type: AlertType.success,
           title: "Healthy",
-          desc: t3.toString()+"\n"+msg)
+          desc: t3.toString()+" celcius\n"+msg)
           .show();
     }
     else if(t1>=48 && t1<=52)
@@ -238,7 +238,7 @@ class _ChatPage extends State<ChatPage> {
           context: context,
           type: AlertType.error,
           title: "Not Healthy",
-          desc: t3.toString()+"\n"+msg)
+          desc: t3.toString()+" celcius\n"+msg)
           .show();
     }
     else
