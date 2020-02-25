@@ -80,15 +80,13 @@ class _MainPage extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Bluetooth Serial'),
+        title: const Text('Wearable device'),
       ),
       body: Container(
         child: ListView(
           children: <Widget>[
-            Divider(),
-            ListTile(
-                title: const Text('General')
-            ),
+            //Divider(),
+
             SwitchListTile(
               title: const Text('Enable Bluetooth'),
               value: _bluetoothState.isEnabled,
@@ -105,16 +103,17 @@ class _MainPage extends State<MainPage> {
                 });
               },
             ),
-            ListTile(
-              title: const Text('Bluetooth status'),
-              subtitle: Text(_bluetoothState.toString()),
+            /*ListTile(
+              //title: const Text('Bluetooth settings'),
+              //subtitle: Text(_bluetoothState.toString()),
               trailing: RaisedButton(
                 child: const Text('Settings'),
                 onPressed: () {
                   FlutterBluetoothSerial.instance.openSettings();
                 },
               ),
-            ),
+            ),*/
+            /*
             ListTile(
               title: const Text('Local adapter address'),
               subtitle: Text(_address),
@@ -175,11 +174,15 @@ class _MainPage extends State<MainPage> {
                     ]
                 )
             ),
+            */
 
-            Divider(),
-            ListTile(
-                title: const Text('Devices discovery and connection')
+            //Divider(),
+            /*ListTile(
+                //title: const Text('Devices discovery and connection')
             ),
+
+             */
+            /*
             SwitchListTile(
               title: const Text('Auto-try specific pin when pairing'),
               subtitle: const Text('Pin 1234'),
@@ -202,6 +205,9 @@ class _MainPage extends State<MainPage> {
                 }
               },
             ),
+
+             */
+            /*
             ListTile(
               title: RaisedButton(
                   child: const Text('Explore discovered devices'),
@@ -219,9 +225,16 @@ class _MainPage extends State<MainPage> {
                   }
               ),
             ),
+
+             */
             ListTile(
               title: RaisedButton(
-                child: const Text('Connect to paired device to chat'),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(24),
+                ),
+                padding: EdgeInsets.all(12),
+                color: Color(0xFFe25d5b),
+                child: const Text('Receive data from device', style: TextStyle(color: Colors.white,)),
                 onPressed: () async {
                   final BluetoothDevice selectedDevice = await Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) { return SelectBondedDevicePage(checkAvailability: false); })
@@ -238,16 +251,23 @@ class _MainPage extends State<MainPage> {
               ),
             ),
 
-            Divider(),
-            ListTile(
+            //Divider(),
+            /*ListTile(
                 title: const Text('Multiple connections example')
             ),
+
+             */
             ListTile(
               title: RaisedButton(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(24),
+                ),
+                padding: EdgeInsets.all(12),
+                color: Color(0xFFe25d5b),
                 child: (
                     (_collectingTask != null && _collectingTask.inProgress)
-                        ? const Text('Disconnect and stop background collecting')
-                        : const Text('Connect to start background collecting')
+                        ? const Text('Stop recording variations', style: TextStyle(color: Colors.white,))
+                        : const Text('Start recording variations', style: TextStyle(color: Colors.white,))
                 ),
                 onPressed: () async {
                   if (_collectingTask != null && _collectingTask.inProgress) {
@@ -269,7 +289,12 @@ class _MainPage extends State<MainPage> {
             ),
             ListTile(
                 title: RaisedButton(
-                  child: const Text('View background collected data'),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  padding: EdgeInsets.all(12),
+                  color: Color(0xFFe25d5b),
+                  child: const Text('View recorded variations', style: TextStyle(color: Colors.white,)),
                   onPressed: (_collectingTask != null) ? () {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) {

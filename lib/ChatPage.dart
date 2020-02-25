@@ -106,9 +106,9 @@ class _ChatPage extends State<ChatPage> {
     return Scaffold(
         appBar: AppBar(
             title: (
-                isConnecting ? Text('Connecting chat to ' + widget.server.name + '...') :
-                isConnected ? Text('Live chat with ' + widget.server.name) :
-                Text('Chat log with ' + widget.server.name)
+                isConnecting ? Text('Connecting to device') :
+                isConnected ? Text('Receiving data ') :
+                Text('...')
             )
         ),
         body: SafeArea(
@@ -124,30 +124,20 @@ class _ChatPage extends State<ChatPage> {
                   Row(
                       children: <Widget>[
                         Flexible(
-                            child: Container(
-                                margin: const EdgeInsets.only(left: 16.0),
-                                child: TextField(
-                                  style: const TextStyle(fontSize: 15.0),
-                                  controller: textEditingController,
-                                  decoration: InputDecoration.collapsed(
-                                    hintText: (
-                                        isConnecting ? 'Wait until connected...' :
-                                        isConnected ? 'Type your message...' :
-                                        'Chat got disconnected'
-                                    ),
-                                    hintStyle: const TextStyle(color: Colors.grey),
+                            child: Center(
+                                //margin: const EdgeInsets.only(left: 16.0),
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(24),
                                   ),
-                                  enabled: isConnected,
-                                )
+                                  onPressed: () => _onBasicAlertPressed(context),
+                                  padding: EdgeInsets.all(12),
+                                  color: Color(0xFFe25d5b),
+                                  child: Text('Check for abnormalies', style: TextStyle(color: Colors.white,)),
+                                ),
                             )
                         ),
-                        Container(
-                          margin: const EdgeInsets.all(8.0),
-                          child: IconButton(
-                              icon: const Icon(Icons.send),
-                            onPressed: () => _onBasicAlertPressed(context),
-                          ),
-                        ),
+
                       ]
                   )
                 ]
@@ -158,6 +148,7 @@ class _ChatPage extends State<ChatPage> {
 
   int t1 = 0;
   String t2 = "";
+  int t3 = 0;
 
   void onDataReceived(Uint8List data) {
     // Allocate buffer for parsed data
@@ -217,34 +208,47 @@ class _ChatPage extends State<ChatPage> {
 
   _onBasicAlertPressed(context) {
     String msg = "";
-    if(t1>55)
+    if(t1>=53 && t1<=55)
     {
-      msg = "Warning! High temperature";
+      t3 = t1-18;
+      msg = "Warning! Low temperature";
       Alert(
           context: context,
-          type: AlertType.warning,
+          type: AlertType.error,
           title: "Not healthy",
-          desc: t1.toString()+" "+t2+"\n"+msg)
+          desc: t3.toString()+"\n"+msg)
           .show();
     }
-    else if(t1==55)
+    else if(t1>=56 && t1<=57)
     {
-      msg = "Normal..Healthy";
+      t3 = t1-18;
+      msg = "Perfect Temperature";
       Alert(
           context: context,
           type: AlertType.success,
           title: "Healthy",
-          desc: t1.toString()+" "+t2+"\n"+msg)
+          desc: t3.toString()+"\n"+msg)
+          .show();
+    }
+    else if(t1>=48 && t1<=52)
+    {
+      t3 = t1-8;
+      msg = "Warning! High temperature";
+      Alert(
+          context: context,
+          type: AlertType.error,
+          title: "Not Healthy",
+          desc: t3.toString()+"\n"+msg)
           .show();
     }
     else
       {
-        msg = "Warning! Low temperature";
+        msg = "Please place the device correctly";
         Alert(
             context: context,
             type: AlertType.warning,
-            title: "Not healthy",
-            desc: t1.toString()+" "+t2+"\n"+msg)
+            title: "Something wrong",
+            desc: t1.toString()+"\n"+msg)
             .show();
       }
 

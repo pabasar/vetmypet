@@ -352,7 +352,7 @@ class _Detect2State extends State<Detect2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Vet My Pet',style: new TextStyle(fontWeight: FontWeight.bold),),centerTitle: true,
+        title: Text('Fido',style: new TextStyle(fontWeight: FontWeight.bold),),centerTitle: true,
       ),
       body: Container(
         child: buttons(),
