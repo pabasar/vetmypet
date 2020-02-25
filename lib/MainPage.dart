@@ -83,9 +83,22 @@ class _MainPage extends State<MainPage> {
         title: const Text('Wearable device'),
       ),
       body: Container(
+        alignment: Alignment.center,
         child: ListView(
+          padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
             //Divider(),
+            SizedBox(height: 10.0),
+            new Image.asset(
+              'images/collar.png',
+              height: 200.0,
+            ),
+            SizedBox(height: 8.0),
+            new Divider(
+              color: Color(0xFFe25d5b),
+              height: 1.0,
+            ),
+            SizedBox(height: 8.0),
 
             SwitchListTile(
               title: const Text('Enable Bluetooth'),
