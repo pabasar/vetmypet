@@ -242,31 +242,6 @@ class AddPetState extends State<AddPet>
     "Belgian Shepherd",
   ];
 
-  final continueButton = Padding(
-    padding: EdgeInsets.symmetric(vertical: 16.0),
-    child: RaisedButton(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(24),
-      ),
-      onPressed: () {},
-      padding: EdgeInsets.all(12),
-      color: Color(0xFFe25d5b),
-      child: Text('Continue', style: TextStyle(color: Colors.white)),
-    ),
-  );
-
-
-
-
-
-
-
-
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -519,7 +494,17 @@ class AddPetState extends State<AddPet>
                     ),
                   ],
                 ),
-                    continueButton,
+                RaisedButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/vet');
+                  },
+                  padding: EdgeInsets.all(12),
+                  color: Color(0xFFe25d5b),
+                  child: Text('Continue', style: TextStyle(color: Colors.white)),
+                ),
 
                   ],
                 ),

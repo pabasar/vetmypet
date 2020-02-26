@@ -88,7 +88,7 @@ class _MainPage extends State<MainPage> {
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
             //Divider(),
-            SizedBox(height: 10.0),
+            SizedBox(height: 16.0),
             new Image.asset(
               'images/collar.png',
               height: 200.0,
