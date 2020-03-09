@@ -4,14 +4,15 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'homepage.dart';
 
-class ChatPage extends StatefulWidget {
+class DataReceive extends StatefulWidget {
   final BluetoothDevice server;
 
-  const ChatPage({this.server});
+  const DataReceive({this.server});
 
   @override
-  _ChatPage createState() => new _ChatPage();
+  _DataReceive createState() => new _DataReceive();
 }
 
 class _Message {
@@ -21,7 +22,7 @@ class _Message {
   _Message(this.whom, this.text);
 }
 
-class _ChatPage extends State<ChatPage> {
+class _DataReceive extends State<DataReceive> {
   static final clientID = 0;
   static final maxMessageLength = 4096 - 3;
   BluetoothConnection connection;
@@ -133,8 +134,24 @@ class _ChatPage extends State<ChatPage> {
                                   onPressed: () => _onBasicAlertPressed(context),
                                   padding: EdgeInsets.all(12),
                                   color: Color(0xFFe25d5b),
-                                  child: Text('Check for abnormalies', style: TextStyle(color: Colors.white,)),
+                                  child: Text('Warnings', style: TextStyle(color: Colors.white,)),
                                 ),
+                            )
+                        ),
+                        Flexible(
+                            child: Center(
+                              //margin: const EdgeInsets.only(left: 16.0),
+                              child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(24),
+                                ),
+                                onPressed: () {
+                                  _sendDataToSecondScreen(context);
+                                },
+                                padding: EdgeInsets.all(12),
+                                color: Color(0xFFe25d5b),
+                                child: Text('Variations', style: TextStyle(color: Colors.white,)),
+                              ),
                             )
                         ),
 
@@ -149,6 +166,11 @@ class _ChatPage extends State<ChatPage> {
   int t1 = 0;
   String t2 = "";
   int t3 = 0;
+
+  String tt1 = "";
+  String tt2 = "";
+  String tempo1 = "";
+  String tempo2 = "";
 
   void onDataReceived(Uint8List data) {
     // Allocate buffer for parsed data
@@ -206,6 +228,11 @@ class _ChatPage extends State<ChatPage> {
     }
   }
 
+  void makeArray()
+  {
+    tt1 += t1.toString();
+  }
+
   _onBasicAlertPressed(context) {
     String msg = "";
     if(t1>=53 && t1<=55)
@@ -252,6 +279,62 @@ class _ChatPage extends State<ChatPage> {
             .show();
       }
 
+  }
+
+  void _sendDataToSecondScreen(BuildContext context) {
+
+    for(int i=0;i<6;i++)
+    {
+      makeArray();
+    }
+
+    tt2 = tt1.substring(tt1.length-12, tt1.length);
+
+    //ChatPage word = tt2 as ChatPage;
+    String word = tt2;
+
+    /*ChatPage s1 = tt2.substring(0,1) as ChatPage;
+    ChatPage s2 = tt2.substring(2,3) as ChatPage;
+    ChatPage s3 = tt2.substring(4,5) as ChatPage;
+    ChatPage s4 = tt2.substring(6,7) as ChatPage;
+    ChatPage s5 = tt2.substring(8,9) as ChatPage;
+    ChatPage s6 = tt2.substring(10,11) as ChatPage;*/
+
+
+
+    //List<double> arr = [double.parse(s1),double.parse(s2),double.parse(s3),double.parse(s4),double.parse(s5)];
+    //List<String> arr = [s1,s2,s3,s4,s5];
+    /*
+    List<List<int>> arr = [
+      [1,int.parse(s1)],
+      [2,int.parse(s2)],
+      [3,int.parse(s3)],
+      [4,int.parse(s4)],
+      [5,int.parse(s5)],
+    ];
+
+     */
+    //List<int> arr = [int.parse(s1),int.parse(s2),int.parse(s3),int.parse(s4),int.parse(s5)];
+    //final List<ChatPage> arr2 = [s1,s2,s3,s4,s5,s6];
+
+    //List<Series> datalist;
+    Navigator.push(
+        context,
+
+        MaterialPageRoute(
+          builder: (context) => HomePage(word : word),
+          // Pass the arguments as part of the RouteSettings. The
+          // DetailScreen reads the arguments from these settings.
+          settings: RouteSettings(
+            //arguments: word,
+          ),
+        ));
+
+    /*MaterialPageRoute(
+          builder: (context) => HomePage(arr2),
+        ));
+
+         */
   }
 
   void _sendMessage(String text) async {

@@ -4,7 +4,7 @@ import 'login.dart';
 import 'sign_up.dart';
 import 'add_pet.dart';
 import 'detect2.dart';
-import 'MainPage.dart';
+import 'controller.dart';
 
 void main()
 {
@@ -35,7 +35,7 @@ void main()
       // When navigating to the "/second" route, build the SecondScreen widget.
       '/addPet': (context) => AddPet(),
       '/vet': (context) => Detect2(),
-      '/monitor': (context) => MainPage(),
+      '/monitor': (context) => Controller(),
     },
 
 

@@ -2,17 +2,17 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 
-import './BluetoothDeviceListEntry.dart';
+import './device_list_entry.dart';
 
-class SelectBondedDevicePage extends StatefulWidget {
+class SelectDevice extends StatefulWidget {
   /// If true, on page start there is performed discovery upon the bonded devices.
   /// Then, if they are not avaliable, they would be disabled from the selection.
   final bool checkAvailability;
 
-  const SelectBondedDevicePage({this.checkAvailability = true});
+  const SelectDevice({this.checkAvailability = true});
 
   @override
-  _SelectBondedDevicePage createState() => new _SelectBondedDevicePage();
+  _SelectDevice createState() => new _SelectDevice();
 }
 
 enum _DeviceAvailability {
@@ -29,14 +29,14 @@ class _DeviceWithAvailability extends BluetoothDevice {
   _DeviceWithAvailability(this.device, this.availability, [this.rssi]);
 }
 
-class _SelectBondedDevicePage extends State<SelectBondedDevicePage> {
+class _SelectDevice extends State<SelectDevice> {
   List<_DeviceWithAvailability> devices = List<_DeviceWithAvailability>();
 
   // Availability
   StreamSubscription<BluetoothDiscoveryResult> _discoveryStreamSubscription;
   bool _isDiscovering;
 
-  _SelectBondedDevicePage();
+  _SelectDevice();
 
   @override
   void initState() {

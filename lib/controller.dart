@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-import './DiscoveryPage.dart';
-import './SelectBondedDevicePage.dart';
-import './ChatPage.dart';
-import './BackgroundCollectingTask.dart';
-import './BackgroundCollectedPage.dart';
+import './device_discover.dart';
+import './select_device.dart';
+import './data_receive.dart';
+import './variation_record.dart';
+import './variation_view.dart';
 
 //import './LineChart.dart';
 
-class MainPage extends StatefulWidget {
+class Controller extends StatefulWidget {
   @override
-  _MainPage createState() => new _MainPage();
+  _Controller createState() => new _Controller();
 }
 
-class _MainPage extends State<MainPage> {
+class _Controller extends State<Controller> {
   BluetoothState _bluetoothState = BluetoothState.UNKNOWN;
 
   String _address = "...";
@@ -250,7 +250,7 @@ class _MainPage extends State<MainPage> {
                 child: const Text('Receive data from device', style: TextStyle(color: Colors.white,)),
                 onPressed: () async {
                   final BluetoothDevice selectedDevice = await Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) { return SelectBondedDevicePage(checkAvailability: false); })
+                      MaterialPageRoute(builder: (context) { return SelectDevice(checkAvailability: false); })
                   );
 
                   if (selectedDevice != null) {
@@ -289,7 +289,7 @@ class _MainPage extends State<MainPage> {
                   }
                   else {
                     final BluetoothDevice selectedDevice = await Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) { return SelectBondedDevicePage(checkAvailability: false); })
+                        MaterialPageRoute(builder: (context) { return SelectDevice(checkAvailability: false); })
                     );
 
                     if (selectedDevice != null) {
@@ -327,7 +327,7 @@ class _MainPage extends State<MainPage> {
   }
 
   void _startChat(BuildContext context, BluetoothDevice server) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) { return ChatPage(server: server); }));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) { return DataReceive(server: server); }));
   }
 
   Future<void> _startBackgroundTask(BuildContext context, BluetoothDevice server) async {

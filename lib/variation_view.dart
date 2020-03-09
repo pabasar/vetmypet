@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './BackgroundCollectingTask.dart';
+import './variation_record.dart';
 import './helpers/LineChart.dart';
 import './helpers/PaintStyle.dart';
 
