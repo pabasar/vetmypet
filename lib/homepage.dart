@@ -24,35 +24,10 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  List<charts.Series<Pollution, String>> _seriesData;
-  List<charts.Series<Task, String>> _seriesPieData;
+
   List<charts.Series<Sales, int>> _seriesLineData;
 
   generateData() {
-    var data1 = [
-      new Pollution(1980, 'USA', 30),
-      new Pollution(1980, 'Asia', 40),
-      new Pollution(1980, 'Europe', 10),
-    ];
-    var data2 = [
-      new Pollution(1985, 'USA', 100),
-      new Pollution(1980, 'Asia', 150),
-      new Pollution(1985, 'Europe', 80),
-    ];
-    var data3 = [
-      new Pollution(1985, 'USA', 200),
-      new Pollution(1980, 'Asia', 300),
-      new Pollution(1985, 'Europe', 180),
-    ];
-
-    var piedata = [
-      new Task('Work', 35.8, Color(0xff3366cc)),
-      new Task('Eat', 8.3, Color(0xff990099)),
-      new Task('Commute', 10.8, Color(0xff109618)),
-      new Task('TV', 15.6, Color(0xfffdbe19)),
-      new Task('Sleep', 19.2, Color(0xffff9900)),
-      new Task('Other', 10.3, Color(0xffdc3912)),
-    ];
 
     //-----------------------
 
@@ -79,94 +54,48 @@ class HomePageState extends State<HomePage> {
     //-----------------------
 
     var linesalesdata = [
-      new Sales(0, this.widget.n1),
-      new Sales(1, this.widget.n2),
-      new Sales(2, this.widget.n3),
-      new Sales(3, this.widget.n4),
-      new Sales(4, this.widget.n5),
-      new Sales(5, this.widget.n6),
+      new Sales(0, this.widget.n6),
+      new Sales(1, this.widget.n5),
+      new Sales(2, this.widget.n4),
+      new Sales(3, this.widget.n3),
+      new Sales(4, this.widget.n2),
+      new Sales(5, this.widget.n1),
     ];
 
     var linesalesdata1 = [
-      new Sales(0, 50),
-      new Sales(1, 50),
-      new Sales(2, 50),
-      new Sales(3, 50),
-      new Sales(4, 50),
-      new Sales(5, 50),
+      new Sales(0, 10),
+      new Sales(1, 10),
+      new Sales(2, 10),
+      new Sales(3, 10),
+      new Sales(4, 10),
+      new Sales(5, 10),
     ];
 
     var linesalesdata2 = [
-      new Sales(0, 50),
-      new Sales(1, 50),
-      new Sales(2, 50),
-      new Sales(3, 50),
-      new Sales(4, 50),
-      new Sales(5, 50),
+      new Sales(0, 10),
+      new Sales(1, 10),
+      new Sales(2, 10),
+      new Sales(3, 10),
+      new Sales(4, 10),
+      new Sales(5, 10),
     ];
-
-    _seriesData.add(
-      charts.Series(
-        domainFn: (Pollution pollution, _) => pollution.place,
-        measureFn: (Pollution pollution, _) => pollution.quantity,
-        id: '2017',
-        data: data1,
-        fillPatternFn: (_, __) => charts.FillPatternType.solid,
-        fillColorFn: (Pollution pollution, _) =>
-            charts.ColorUtil.fromDartColor(Color(0xff990099)),
-      ), 
-    );
-
-    _seriesData.add(
-      charts.Series(
-        domainFn: (Pollution pollution, _) => pollution.place,
-        measureFn: (Pollution pollution, _) => pollution.quantity,
-        id: '2018',
-        data: data2,
-        fillPatternFn: (_, __) => charts.FillPatternType.solid,
-        fillColorFn: (Pollution pollution, _) =>
-           charts.ColorUtil.fromDartColor(Color(0xff109618)),
-      ),
-    );
-
-    _seriesData.add(
-      charts.Series(
-        domainFn: (Pollution pollution, _) => pollution.place,
-        measureFn: (Pollution pollution, _) => pollution.quantity,
-        id: '2019',
-        data: data3,
-        fillPatternFn: (_, __) => charts.FillPatternType.solid,
-       fillColorFn: (Pollution pollution, _) =>
-          charts.ColorUtil.fromDartColor(Color(0xffff9900)),
-      ),
-    );
-
-    _seriesPieData.add(
-      charts.Series(
-        domainFn: (Task task, _) => task.task,
-        measureFn: (Task task, _) => task.taskvalue,
-        colorFn: (Task task, _) =>
-            charts.ColorUtil.fromDartColor(task.colorval),
-        id: 'Air Pollution',
-        data: piedata,
-         labelAccessorFn: (Task row, _) => '${row.taskvalue}',
-      ),
-    );
-
 
     _seriesLineData.add(
       charts.Series(
         colorFn: (__, _) => charts.ColorUtil.fromDartColor(Colors.teal),
-        id: 'Air Pollution',
+        id: 'Temperature',
         data: linesalesdata,
         domainFn: (Sales sales, _) => sales.yearval,
         measureFn: (Sales sales, _) => sales.salesval,
       ),
     );
+
+    //----------------------------------------------------
+    /*
     _seriesLineData.add(
       charts.Series(
         colorFn: (__, _) => charts.ColorUtil.fromDartColor(Colors.transparent),
-        id: 'Air Pollution',
+        id: 'Temperature',
         data: linesalesdata1,
         domainFn: (Sales sales, _) => sales.yearval,
         measureFn: (Sales sales, _) => sales.salesval,
@@ -176,42 +105,30 @@ class HomePageState extends State<HomePage> {
     _seriesLineData.add(
       charts.Series(
         colorFn: (__, _) => charts.ColorUtil.fromDartColor(Colors.transparent),
-        id: 'Air Pollution',
+        id: 'Temperature',
         data: linesalesdata2,
         domainFn: (Sales sales, _) => sales.yearval,
         measureFn: (Sales sales, _) => sales.salesval,
       ),
     );
+    
+     */
+
+    //---------------------------------------------------
   }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _seriesData = List<charts.Series<Pollution, String>>();
-    _seriesPieData = List<charts.Series<Task, String>>();
     _seriesLineData = List<charts.Series<Sales, int>>();
     generateData();
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DefaultTabController(
-        length: 3,
-        child: Scaffold(
+    return new Scaffold(
           appBar: AppBar(
-            //backgroundColor: Color(0xff308e1c),
-            bottom: TabBar(
-              //indicatorColor: Color(0xff9962D0),
-              tabs: [
-                Tab(
-                  icon: Icon(FontAwesomeIcons.solidChartBar),
-                ),
-                Tab(icon: Icon(FontAwesomeIcons.chartPie)),
-                Tab(icon: Icon(FontAwesomeIcons.chartLine)),
-              ],
-            ),
             title: Text('Temperature Variation'),
           ),
           body: Center(
@@ -222,15 +139,13 @@ class HomePageState extends State<HomePage> {
                   child: Center(
                     child: Column(
                       children: <Widget>[
-                        Text(
-                            'Body Temperature Variation',style: TextStyle(fontSize: 24.0,fontWeight: FontWeight.bold),),
                         Expanded(
                           child: charts.LineChart(
                             _seriesLineData,
                             defaultRenderer: new charts.LineRendererConfig(
-                                includeArea: true, stacked: true),
-                            animate: true,
-                            animationDuration: Duration(seconds: 5),
+                                includeArea: false, stacked: false),
+                            //animate: false,
+                            //animationDuration: Duration(seconds: 2),
                             behaviors: [
         new charts.ChartTitle('Time',
             behaviorPosition: charts.BehaviorPosition.bottom,
@@ -251,9 +166,8 @@ class HomePageState extends State<HomePage> {
                 ),
               ),
           ),
-        ),
-      ),
     );
+
   }
 }
 
