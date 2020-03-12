@@ -51,118 +51,6 @@ class HomePageState extends State<HomePage> {
       widget.n1 = 0;
     }
 
-    //----
-
-    if(widget.n2>=53 && widget.n2<=55)
-    {
-      widget.n2 = widget.n2-18;
-
-    }
-    else if(widget.n2>=56 && widget.n2<=57)
-    {
-      widget.n2 = widget.n2-18;
-
-    }
-    else if(widget.n2>=48 && widget.n2<=52)
-    {
-      widget.n2 = widget.n2-8;
-
-    }
-    else
-    {
-      widget.n2 = 0;
-    }
-
-    //----
-
-    if(widget.n3>=53 && widget.n3<=55)
-    {
-      widget.n3 = widget.n3-18;
-
-    }
-    else if(widget.n3>=56 && widget.n3<=57)
-    {
-      widget.n3 = widget.n3-18;
-
-    }
-    else if(widget.n3>=48 && widget.n3<=52)
-    {
-      widget.n3 = widget.n3-8;
-
-    }
-    else
-    {
-      widget.n3 = 0;
-    }
-
-    //----
-
-    if(widget.n4>=53 && widget.n4<=55)
-    {
-      widget.n4 = widget.n4-18;
-
-    }
-    else if(widget.n4>=56 && widget.n4<=57)
-    {
-      widget.n4 = widget.n4-18;
-
-    }
-    else if(widget.n4>=48 && widget.n4<=52)
-    {
-      widget.n4 = widget.n4-8;
-
-    }
-    else
-    {
-      widget.n4 = 0;
-    }
-
-    //----
-
-    if(widget.n5>=53 && widget.n5<=55)
-    {
-      widget.n5 = widget.n5-18;
-
-    }
-    else if(widget.n5>=56 && widget.n5<=57)
-    {
-      widget.n5 = widget.n5-18;
-
-    }
-    else if(widget.n5>=48 && widget.n5<=52)
-    {
-      widget.n5 = widget.n5-8;
-
-    }
-    else
-    {
-      widget.n5 = 0;
-    }
-
-    //----
-
-    if(widget.n6>=53 && widget.n6<=55)
-    {
-      widget.n6 = widget.n6-18;
-
-    }
-    else if(widget.n6>=56 && widget.n6<=57)
-    {
-      widget.n6 = widget.n6-18;
-
-    }
-    else if(widget.n6>=48 && widget.n6<=52)
-    {
-      widget.n6 = widget.n6-8;
-
-    }
-    else
-    {
-      widget.n6 = 0;
-    }
-
-    //----
-
     //-----------------------
 
     var linesalesdata = [
@@ -223,7 +111,7 @@ class HomePageState extends State<HomePage> {
         measureFn: (Sales sales, _) => sales.salesval,
       ),
     );
-    
+
      */
 
     //---------------------------------------------------
@@ -240,44 +128,44 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-          appBar: AppBar(
-            title: Text('Temperature Variation'),
-          ),
-          body: Center(
-            child:
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Container(
-                  child: Center(
-                    child: Column(
-                      children: <Widget>[
-                        Expanded(
-                          child: charts.LineChart(
-                            _seriesLineData,
-                            defaultRenderer: new charts.LineRendererConfig(
-                                includeArea: false, stacked: false),
-                            //animate: false,
-                            //animationDuration: Duration(seconds: 2),
-                            behaviors: [
-        new charts.ChartTitle('Time',
-            behaviorPosition: charts.BehaviorPosition.bottom,
-            titleOutsideJustification:charts.OutsideJustification.middleDrawArea),
-        new charts.ChartTitle('Temperature Celcius',
-            behaviorPosition: charts.BehaviorPosition.start,
-            titleOutsideJustification: charts.OutsideJustification.middleDrawArea),
-        new charts.ChartTitle('',
-            behaviorPosition: charts.BehaviorPosition.end,
-            titleOutsideJustification:charts.OutsideJustification.middleDrawArea,
-            )   
-      ]
-                          ),
-                        ),
-                      ],
+      appBar: AppBar(
+        title: Text('Temperature Variation'),
+      ),
+      body: Center(
+        child:
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Container(
+            child: Center(
+              child: Column(
+                children: <Widget>[
+                  Expanded(
+                    child: charts.LineChart(
+                        _seriesLineData,
+                        defaultRenderer: new charts.LineRendererConfig(
+                            includeArea: false, stacked: false),
+                        //animate: false,
+                        //animationDuration: Duration(seconds: 2),
+                        behaviors: [
+                          new charts.ChartTitle('Time',
+                              behaviorPosition: charts.BehaviorPosition.bottom,
+                              titleOutsideJustification:charts.OutsideJustification.middleDrawArea),
+                          new charts.ChartTitle('Temperature Celcius',
+                              behaviorPosition: charts.BehaviorPosition.start,
+                              titleOutsideJustification: charts.OutsideJustification.middleDrawArea),
+                          new charts.ChartTitle('',
+                            behaviorPosition: charts.BehaviorPosition.end,
+                            titleOutsideJustification:charts.OutsideJustification.middleDrawArea,
+                          )
+                        ]
                     ),
                   ),
-                ),
+                ],
               ),
+            ),
           ),
+        ),
+      ),
     );
 
   }

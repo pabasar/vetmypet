@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'homepage.dart';
+import 'graph1.dart';
 
 class DataReceive extends StatefulWidget {
   final BluetoothDevice server;
