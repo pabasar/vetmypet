@@ -72,6 +72,80 @@ class _Detect2State extends State<Detect2> {
     );
   }
 
+  Widget contactVet(BuildContext context)
+  {
+    return new AlertDialog(
+      title: const Text('Nearby Vets',style: TextStyle(fontWeight: FontWeight.bold),),
+      content: new ListView(
+        children: <Widget>[
+          Text("Dr. P. Dillip"),
+          Text("024 222 1633"),
+          Text("Vavuniya"),
+          new Divider(
+            color: Color(0xFFe25d5b),
+            height: 1.0,
+          ),
+          Text("Dr(Mrs). T. Thabothini"),
+          Text("024 2222219  "),
+          Text("Vavuniya"),
+          new Divider(
+            color: Color(0xFFe25d5b),
+            height: 1.0,
+          ),
+          Text("Dr. I. M. Sandamali"),
+          Text("024 2222219"),
+          Text("Vavuniya"),
+          new Divider(
+            color: Color(0xFFe25d5b),
+            height: 1.0,
+          ),
+          Text("Dr. K.G.M.P. Kumara"),
+          Text("024 2222119"),
+          Text("Vavuniya"),
+          new Divider(
+            color: Color(0xFFe25d5b),
+            height: 1.0,
+          ),
+          Text("Dr. S. Sutharini"),
+          Text("024 2223533"),
+          Text("Vavuniya"),
+          new Divider(
+            color: Color(0xFFe25d5b),
+            height: 1.0,
+          ),
+          Text("Dr. S. Thirualan"),
+          Text("024 3243649"),
+          Text("Vavuniya"),
+          new Divider(
+            color: Color(0xFFe25d5b),
+            height: 1.0,
+          ),
+          new Divider(
+            color: Color(0xFFe25d5b),
+            height: 1.0,
+          ),
+          Text("Dr. P N C Fernando"),
+          Text("025 2226875"),
+          Text("Anuradhapura"),
+          new Divider(
+            color: Color(0xFFe25d5b),
+            height: 1.0,
+          ),
+          Text("Dr. G. Karawita"),
+          Text("025 2225976"),
+          Text("Anuradhapura"),
+          new Divider(
+            color: Color(0xFFe25d5b),
+            height: 1.0,
+          ),
+          Text("Dr. S.Gowrithilagan"),
+          Text("021 3208077"),
+          Text("Kilinochchi"),
+        ],
+      ),
+    );
+  }
+
   Widget differentialDialog(BuildContext context) {
     return new AlertDialog(
       title: const Text('My Pet is,',style: TextStyle(fontWeight: FontWeight.bold),),
@@ -228,6 +302,51 @@ class _Detect2State extends State<Detect2> {
     );
   }
 
+  Widget history()
+  {
+    return new Center(
+      child: ListView(
+        children: <Widget>[
+          Text("Dr. G. Karawita"),
+          Text("025 2225976"),
+          Text("Anuradhapura"),
+          new Divider(
+            color: Color(0xFFe25d5b),
+            height: 1.0,
+          ),
+          Text("Dr. G. Karawita"),
+          Text("025 2225976"),
+          Text("Anuradhapura"),
+          new Divider(
+            color: Color(0xFFe25d5b),
+            height: 1.0,
+          ),
+          Text("Dr. G. Karawita"),
+          Text("025 2225976"),
+          Text("Anuradhapura"),
+          new Divider(
+            color: Color(0xFFe25d5b),
+            height: 1.0,
+          ),
+          Text("Dr. G. Karawita"),
+          Text("025 2225976"),
+          Text("Anuradhapura"),
+          new Divider(
+            color: Color(0xFFe25d5b),
+            height: 1.0,
+          ),
+          Text("Dr. G. Karawita"),
+          Text("025 2225976"),
+          Text("Anuradhapura"),
+          new Divider(
+            color: Color(0xFFe25d5b),
+            height: 1.0,
+          ),
+        ],
+      ),
+    );
+  }
+
 
   Widget detectDialog(BuildContext context) {
     return new AlertDialog(
@@ -300,12 +419,12 @@ class _Detect2State extends State<Detect2> {
                 onPressed: () {
                   showDialog(
                     context: context,
-                    builder: (BuildContext context) => differentialDialog(context),
+                    builder: (BuildContext context) => contactVet(context),
                   );
                   // Perform some action
                 },
-                tooltip: 'Differential Diagnosis',
-                child: Icon(Icons.add_box,color: Colors.white,),
+                tooltip: 'Nearby Veterinary Surgeons',
+                child: Icon(Icons.contacts,color: Colors.white,),
               ),)
         ),
 
@@ -354,10 +473,15 @@ class _Detect2State extends State<Detect2> {
       appBar: AppBar(
         title: Text('Fido',style: new TextStyle(fontWeight: FontWeight.bold),),centerTitle: true,
       ),
-      body: Container(
-        child: buttons(),
+      body:
+      Stack(
+        children: <Widget>[
+          history(),
+          Container(
+            child: buttons(),
+          ),
+        ],
       ),
-
     );
   }
 }
