@@ -95,7 +95,7 @@ class _Controller extends State<Controller> {
             ),
             SizedBox(height: 8.0),
             new Divider(
-              color: Color(0xFF3da4ab),
+              color: Color(0xFF03a678),
               height: 1.0,
             ),
             SizedBox(height: 8.0),
@@ -246,7 +246,7 @@ class _Controller extends State<Controller> {
                   borderRadius: BorderRadius.circular(24),
                 ),
                 padding: EdgeInsets.all(12),
-                color: Color(0xFF3da4ab),
+                color: Color(0xFF03a678),
                 child: const Text('Receive data from device', style: TextStyle(color: Colors.white,)),
                 onPressed: () async {
                   final BluetoothDevice selectedDevice = await Navigator.of(context).push(
@@ -276,7 +276,7 @@ class _Controller extends State<Controller> {
                   borderRadius: BorderRadius.circular(24),
                 ),
                 padding: EdgeInsets.all(12),
-                color: Color(0xFF3da4ab),
+                color: Color(0xFF03a678),
                 child: (
                     (_collectingTask != null && _collectingTask.inProgress)
                         ? const Text('Stop recording variations', style: TextStyle(color: Colors.white,))
@@ -306,7 +306,7 @@ class _Controller extends State<Controller> {
                     borderRadius: BorderRadius.circular(24),
                   ),
                   padding: EdgeInsets.all(12),
-                  color: Color(0xFF3da4ab),
+                  color: Color(0xFF03a678),
                   child: const Text('View recorded variations', style: TextStyle(color: Colors.white,)),
                   onPressed: (_collectingTask != null) ? () {
                     Navigator.of(context).push(

@@ -104,8 +104,8 @@ class LoginState extends State<Login>
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [
-                  Color(0xFF3da4ab),
-                  Color(0xFF0e9aa7),
+                  Color(0xFF03a678),
+                  Color(0xFF019875),
                 ]
             )
         ),
@@ -131,7 +131,7 @@ class LoginState extends State<Login>
                 },
                 padding: EdgeInsets.all(12),
                 color: Colors.white,
-                child: Text('Sign In', style: TextStyle(color: Color(0xFF0e9aa7))),
+                child: Text('Sign In', style: TextStyle(color: Color(0xFF019875))),
               ),
           FlatButton(
             child: Text(

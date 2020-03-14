@@ -9,18 +9,18 @@ void main()
 {
 
   const MaterialColor buttonTextColor = const MaterialColor(
-    0xFF3da4ab,
+    0xFF03a678,
     const <int, Color>{
-      50: const Color(0xFF3da4ab),
-      100: const Color(0xFF3da4ab),
-      200: const Color(0xFF3da4ab),
-      300: const Color(0xFF3da4ab),
-      400: const Color(0xFF3da4ab),
-      500: const Color(0xFF0e9aa7),
-      600: const Color(0xFF0e9aa7),
-      700: const Color(0xFF0e9aa7),
-      800: const Color(0xFF0e9aa7),
-      900: const Color(0xFF0e9aa7),
+      50: const Color(0xFF03a678),
+      100: const Color(0xFF03a678),
+      200: const Color(0xFF03a678),
+      300: const Color(0xFF03a678),
+      400: const Color(0xFF03a678),
+      500: const Color(0xFF019875),
+      600: const Color(0xFF019875),
+      700: const Color(0xFF019875),
+      800: const Color(0xFF019875),
+      900: const Color(0xFF019875),
     },
   );
 
@@ -45,7 +45,7 @@ void main()
       //dialogBackgroundColor: Color(0xFFe25d5b),
       //primaryColorLight: Color(0xFFe63c37),
       primarySwatch: buttonTextColor,
-      accentColor: Color(0xFF0e9aa7),
+      accentColor: Color(0xFF03a678),
       fontFamily: 'WorkSans',
     ),
     title: "Fido",

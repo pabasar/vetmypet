@@ -7,6 +7,7 @@ import 'package:flutter/rendering.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/gestures.dart';
+import 'package:grouped_list/grouped_list.dart';
 
 class Detect2 extends StatefulWidget {
   @override
@@ -27,6 +28,22 @@ class _Detect2State extends State<Detect2> {
   bool coughing = false;
   bool dryNose = false;
   bool dehydrate = false;
+
+  List _elements = [
+    {'name': 'Jimmy, Bacterial Infection', 'group': 'March'},
+    {'name': 'Jimmy, Canine Lupus', 'group': 'March'},
+    {'name': 'Jimmy, Infection', 'group': 'March'},
+    {'name': 'Jimmy, Ear Infection', 'group': 'February'},
+    {'name': 'Jimmy, Ringworm', 'group': 'January'},
+    {'name': 'Jimmy, Weak Tissues', 'group': 'December'},
+    {'name': 'Jimmy, Acral lick dermatitis', 'group': 'December'},
+    {'name': 'Jimmy, Heart Trouble', 'group': 'December'},
+    {'name': 'Jimmy, Weak Breath', 'group': 'December'},
+    {'name': 'Jimmy, Dry Nose', 'group': 'November'},
+    {'name': 'Jimmy, Ringworm', 'group': 'November'},
+
+
+  ];
 
   pickImageFromGallery(ImageSource source) {
     setState(() {
@@ -77,73 +94,88 @@ class _Detect2State extends State<Detect2> {
     return new AlertDialog(
       title: const Text('Nearby Vets',style: TextStyle(fontWeight: FontWeight.bold),),
       content: new ListView(
+        padding: EdgeInsets.only(left: 24.0, right: 24.0),
         children: <Widget>[
           Text("Dr. P. Dillip"),
           Text("024 222 1633"),
           Text("Vavuniya"),
+          SizedBox(height: 10,),
           new Divider(
-            color: Color(0xFF3da4ab),
+            color: Color(0xFF03a678),
             height: 1.0,
           ),
+          SizedBox(height: 10,),
           Text("Dr(Mrs). T. Thabothini"),
           Text("024 2222219  "),
           Text("Vavuniya"),
+          SizedBox(height: 10,),
           new Divider(
-            color: Color(0xFF3da4ab),
+            color: Color(0xFF03a678),
             height: 1.0,
           ),
+          SizedBox(height: 10,),
           Text("Dr. I. M. Sandamali"),
           Text("024 2222219"),
           Text("Vavuniya"),
+          SizedBox(height: 10,),
           new Divider(
-            color: Color(0xFF3da4ab),
+            color: Color(0xFF03a678),
             height: 1.0,
           ),
+          SizedBox(height: 10,),
           Text("Dr. K.G.M.P. Kumara"),
           Text("024 2222119"),
           Text("Vavuniya"),
+          SizedBox(height: 10,),
           new Divider(
-            color: Color(0xFF3da4ab),
+            color: Color(0xFF03a678),
             height: 1.0,
           ),
+          SizedBox(height: 10,),
           Text("Dr. S. Sutharini"),
           Text("024 2223533"),
           Text("Vavuniya"),
+          SizedBox(height: 10,),
           new Divider(
-            color: Color(0xFF3da4ab),
+            color: Color(0xFF03a678),
             height: 1.0,
           ),
+          SizedBox(height: 10,),
           Text("Dr. S. Thirualan"),
           Text("024 3243649"),
           Text("Vavuniya"),
+          SizedBox(height: 10,),
           new Divider(
-            color: Color(0xFF3da4ab),
+            color: Color(0xFF03a678),
             height: 1.0,
           ),
-          new Divider(
-            color: Color(0xFF3da4ab),
-            height: 1.0,
-          ),
+          SizedBox(height: 10,),
           Text("Dr. P N C Fernando"),
           Text("025 2226875"),
           Text("Anuradhapura"),
+          SizedBox(height: 10,),
           new Divider(
-            color: Color(0xFF3da4ab),
+            color: Color(0xFF03a678),
             height: 1.0,
           ),
+          SizedBox(height: 10,),
           Text("Dr. G. Karawita"),
           Text("025 2225976"),
           Text("Anuradhapura"),
+          SizedBox(height: 10,),
           new Divider(
-            color: Color(0xFF3da4ab),
+            color: Color(0xFF03a678),
             height: 1.0,
           ),
+          SizedBox(height: 10,),
           Text("Dr. S.Gowrithilagan"),
           Text("021 3208077"),
           Text("Kilinochchi"),
+          SizedBox(height: 10,),
         ],
       ),
     );
+
   }
 
   Widget differentialDialog(BuildContext context) {
@@ -291,7 +323,7 @@ class _Detect2State extends State<Detect2> {
       ),
       actions: <Widget>[
               RaisedButton(
-                color: Color(0xFF3da4ab),
+                color: Color(0xFF03a678),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -304,46 +336,33 @@ class _Detect2State extends State<Detect2> {
 
   Widget history()
   {
-    return new Center(
-      child: ListView(
-        children: <Widget>[
-          Text("Dr. G. Karawita"),
-          Text("025 2225976"),
-          Text("Anuradhapura"),
-          new Divider(
-            color: Color(0xFF3da4ab),
-            height: 1.0,
-          ),
-          Text("Dr. G. Karawita"),
-          Text("025 2225976"),
-          Text("Anuradhapura"),
-          new Divider(
-            color: Color(0xFF3da4ab),
-            height: 1.0,
-          ),
-          Text("Dr. G. Karawita"),
-          Text("025 2225976"),
-          Text("Anuradhapura"),
-          new Divider(
-            color: Color(0xFF3da4ab),
-            height: 1.0,
-          ),
-          Text("Dr. G. Karawita"),
-          Text("025 2225976"),
-          Text("Anuradhapura"),
-          new Divider(
-            color: Color(0xFF3da4ab),
-            height: 1.0,
-          ),
-          Text("Dr. G. Karawita"),
-          Text("025 2225976"),
-          Text("Anuradhapura"),
-          new Divider(
-            color: Color(0xFF3da4ab),
-            height: 1.0,
-          ),
-        ],
+    return new GroupedListView<dynamic, String>(
+      groupBy: (element) => element['group'],
+      elements: _elements,
+      order: GroupedListOrder.DESC,
+      groupSeparatorBuilder: (String value) => Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+            child: Text(
+              value,
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            )),
       ),
+      itemBuilder: (c, element) {
+        return Card(
+          elevation: 8.0,
+          margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+          child: Container(
+            child: ListTile(
+              contentPadding:
+              EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+              leading: Icon(Icons.history),
+              title: Text(element['name']),
+              trailing: Icon(Icons.arrow_forward),
+            ),
+          ),
+        );
+      },
     );
   }
 
@@ -379,7 +398,7 @@ class _Detect2State extends State<Detect2> {
       ),
       actions: <Widget>[
         RaisedButton(
-          color: Color(0xFF3da4ab),
+          color: Color(0xFF03a678),
           onPressed: () {
             Navigator.of(context).pop();
           },
