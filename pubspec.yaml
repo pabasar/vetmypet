@@ -62,11 +62,6 @@ flutter:
     - assets/automl/manifest.json
     - assets/automl/model.tflite
     - images/login.png
-    - images/birthday.png
-    - images/dogweight.png
-    - images/dogbreed.png
-    - images/cat.png
-    - images/dog.png
     - images/collar.png
 
 

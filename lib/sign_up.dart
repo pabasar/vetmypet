@@ -41,7 +41,7 @@ class SignUpState extends State<SignUp>
   }
 
   final logo = Hero(
-    tag: 'Fido',
+    tag: 'Vet My Pet',
     child: CircleAvatar(
       backgroundColor: Colors.transparent,
       radius: 48.0,
@@ -114,8 +114,8 @@ class SignUpState extends State<SignUp>
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: [
-                Color(0xFFe25d5b),
-                Color(0xFFe63c37),
+                Color(0xFF217872),
+                Color(0xFF176F84),
               ]
           )
         ),
@@ -137,11 +137,11 @@ class SignUpState extends State<SignUp>
               borderRadius: BorderRadius.circular(24),
             ),
             onPressed: () {
-              Navigator.pushNamed(context, '/addPet');
+              Navigator.pushNamed(context, '/vet');
             },
             padding: EdgeInsets.all(12),
             color: Colors.white,
-            child: Text('Sign Up', style: TextStyle(color: Color(0xFFe63c37),)),
+            child: Text('Sign Up', style: TextStyle(color: Color(0xFF176F84),)),
           ),
           FlatButton(
             child: Text(
@@ -159,7 +159,7 @@ class SignUpState extends State<SignUp>
                 Navigator.pushNamed(context, '/vet');
               },
               child: Text(
-                'Skip & Continue to Fido',
+                'Skip & Continue to Vet My Pet',
                 style: TextStyle(color: Colors.white),
               ),
 

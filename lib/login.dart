@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'sign_up.dart';
-import 'add_pet.dart';
 import 'detect2.dart';
 
 class Login extends StatefulWidget
@@ -42,7 +41,7 @@ class LoginState extends State<Login>
   }
 
   final logo = Hero(
-    tag: 'Fido',
+    tag: 'Vet My Pet',
     child: CircleAvatar(
       backgroundColor: Colors.transparent,
       radius: 48.0,
@@ -105,8 +104,8 @@ class LoginState extends State<Login>
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [
-                  Color(0xFFe25d5b),
-                  Color(0xFFe63c37),
+                  Color(0xFF217872),
+                  Color(0xFF176F84),
                 ]
             )
         ),
@@ -128,15 +127,15 @@ class LoginState extends State<Login>
                   borderRadius: BorderRadius.circular(24),
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, '/addPet');
+                  Navigator.pushNamed(context, '/vet');
                 },
                 padding: EdgeInsets.all(12),
                 color: Colors.white,
-                child: Text('Sign In', style: TextStyle(color: Color(0xFFe63c37))),
+                child: Text('Sign In', style: TextStyle(color: Color(0xFF176F84))),
               ),
           FlatButton(
             child: Text(
-              'New to Fido? Sign Up',
+              'New to Vet My Pet? Sign Up',
               style: TextStyle(color: Colors.white),
             ),
             onPressed: () {
@@ -148,7 +147,7 @@ class LoginState extends State<Login>
               Navigator.pushNamed(context, '/vet');
             },
             child: Text(
-              'Skip & Continue to Fido',
+              'Skip & Continue to Vet My Pet',
               style: TextStyle(color: Colors.white),
             ),
 
