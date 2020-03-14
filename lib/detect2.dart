@@ -8,6 +8,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/gestures.dart';
 import 'package:grouped_list/grouped_list.dart';
+import 'package:flutter/rendering.dart';
+import 'package:fab_circular_menu/fab_circular_menu.dart';
 
 class Detect2 extends StatefulWidget {
   @override
@@ -16,6 +18,7 @@ class Detect2 extends StatefulWidget {
 
 class _Detect2State extends State<Detect2> {
   Future<File> imageFile;
+  final controller = FabCircularMenuController();
 
   bool notEat = false;
   bool dull = false;
@@ -30,17 +33,17 @@ class _Detect2State extends State<Detect2> {
   bool dehydrate = false;
 
   List _elements = [
-    {'name': 'Jimmy, Bacterial Infection', 'group': 'March'},
-    {'name': 'Jimmy, Canine Lupus', 'group': 'March'},
-    {'name': 'Jimmy, Infection', 'group': 'March'},
-    {'name': 'Jimmy, Ear Infection', 'group': 'February'},
-    {'name': 'Jimmy, Ringworm', 'group': 'January'},
-    {'name': 'Jimmy, Weak Tissues', 'group': 'December'},
-    {'name': 'Jimmy, Acral lick dermatitis', 'group': 'December'},
-    {'name': 'Jimmy, Heart Trouble', 'group': 'December'},
-    {'name': 'Jimmy, Weak Breath', 'group': 'December'},
-    {'name': 'Jimmy, Dry Nose', 'group': 'November'},
-    {'name': 'Jimmy, Ringworm', 'group': 'November'},
+    {'name': 'Jimmy, Bacterial Infection', 'group': 'March, 2020'},
+    {'name': 'Jimmy, Canine Lupus', 'group': 'March, 2020'},
+    {'name': 'Jimmy, Infection', 'group': 'March, 2020'},
+    {'name': 'Jimmy, Ear Infection', 'group': 'February, 2020'},
+    {'name': 'Jimmy, Ringworm', 'group': 'January, 2020'},
+    {'name': 'Jimmy, Weak Tissues', 'group': 'December, 2019'},
+    {'name': 'Jimmy, Acral lick dermatitis', 'group': 'December, 2019'},
+    {'name': 'Jimmy, Heart Trouble', 'group': 'December, 2019'},
+    {'name': 'Jimmy, Weak Breath', 'group': 'December, 2019'},
+    {'name': 'Jimmy, Dry Nose', 'group': 'November, 2019'},
+    {'name': 'Jimmy, Ringworm', 'group': 'November, 2019'},
 
 
   ];
@@ -345,7 +348,7 @@ class _Detect2State extends State<Detect2> {
         child: Center(
             child: Text(
               value,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20,),
             )),
       ),
       itemBuilder: (c, element) {
@@ -411,6 +414,7 @@ class _Detect2State extends State<Detect2> {
 
 
   Widget buttons() {
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
@@ -465,7 +469,7 @@ class _Detect2State extends State<Detect2> {
                 child: Icon(Icons.image,color: Colors.white,),
               ),)
         ),
-        Align(
+        /*Align(
             alignment: Alignment.bottomRight,
             child: Container(
               padding: EdgeInsets.fromLTRB(0, 0, 15, 15),
@@ -482,6 +486,8 @@ class _Detect2State extends State<Detect2> {
                 child: Icon(Icons.camera_alt,color: Colors.white,),
               ),)
         ),
+
+         */
       ],
     );
   }
