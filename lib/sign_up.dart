@@ -114,8 +114,8 @@ class SignUpState extends State<SignUp>
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: [
-                Color(0xFF217872),
-                Color(0xFF176F84),
+                Color(0xFF3da4ab),
+                Color(0xFF0e9aa7),
               ]
           )
         ),
@@ -141,7 +141,7 @@ class SignUpState extends State<SignUp>
             },
             padding: EdgeInsets.all(12),
             color: Colors.white,
-            child: Text('Sign Up', style: TextStyle(color: Color(0xFF176F84),)),
+            child: Text('Sign Up', style: TextStyle(color: Color(0xFF0e9aa7),)),
           ),
           FlatButton(
             child: Text(

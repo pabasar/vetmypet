@@ -194,7 +194,7 @@ class HomePageState extends State<HomePage> {
 
     _seriesLineData.add(
       charts.Series(
-        colorFn: (__, _) => charts.ColorUtil.fromDartColor(Colors.teal),
+        colorFn: (__, _) => charts.ColorUtil.fromDartColor(Color(0xFF3da4ab)),
         id: 'Temperature',
         data: linesalesdata,
         domainFn: (Sales sales, _) => sales.yearval,

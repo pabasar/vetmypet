@@ -98,7 +98,7 @@ class _DataReceive extends State<DataReceive> {
             padding: EdgeInsets.all(12.0),
             margin: EdgeInsets.only(bottom: 8.0, left: 8.0, right: 8.0),
             width: 222.0,
-            decoration: BoxDecoration(color: _message.whom == clientID ? Color(0xFFe25d5b) : Colors.grey, borderRadius: BorderRadius.circular(7.0)),
+            decoration: BoxDecoration(color: _message.whom == clientID ? Color(0xFF3da4ab) : Colors.grey, borderRadius: BorderRadius.circular(7.0)),
           ),
         ],
         mainAxisAlignment: _message.whom == clientID ? MainAxisAlignment.end : MainAxisAlignment.start,
@@ -134,7 +134,7 @@ class _DataReceive extends State<DataReceive> {
                                   ),
                                   onPressed: () => _onBasicAlertPressed(context),
                                   padding: EdgeInsets.all(12),
-                                  color: Color(0xFFe25d5b),
+                                  color: Color(0xFF3da4ab),
                                   child: Text('Warnings', style: TextStyle(color: Colors.white,)),
                                 ),
                             )
@@ -150,7 +150,7 @@ class _DataReceive extends State<DataReceive> {
                                   _sendDataToSecondScreen(context);
                                 },
                                 padding: EdgeInsets.all(12),
-                                color: Color(0xFFe25d5b),
+                                color: Color(0xFF3da4ab),
                                 child: Text('Variations', style: TextStyle(color: Colors.white,)),
                               ),
                             )

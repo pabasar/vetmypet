@@ -82,60 +82,60 @@ class _Detect2State extends State<Detect2> {
           Text("024 222 1633"),
           Text("Vavuniya"),
           new Divider(
-            color: Color(0xFFe25d5b),
+            color: Color(0xFF3da4ab),
             height: 1.0,
           ),
           Text("Dr(Mrs). T. Thabothini"),
           Text("024 2222219  "),
           Text("Vavuniya"),
           new Divider(
-            color: Color(0xFFe25d5b),
+            color: Color(0xFF3da4ab),
             height: 1.0,
           ),
           Text("Dr. I. M. Sandamali"),
           Text("024 2222219"),
           Text("Vavuniya"),
           new Divider(
-            color: Color(0xFFe25d5b),
+            color: Color(0xFF3da4ab),
             height: 1.0,
           ),
           Text("Dr. K.G.M.P. Kumara"),
           Text("024 2222119"),
           Text("Vavuniya"),
           new Divider(
-            color: Color(0xFFe25d5b),
+            color: Color(0xFF3da4ab),
             height: 1.0,
           ),
           Text("Dr. S. Sutharini"),
           Text("024 2223533"),
           Text("Vavuniya"),
           new Divider(
-            color: Color(0xFFe25d5b),
+            color: Color(0xFF3da4ab),
             height: 1.0,
           ),
           Text("Dr. S. Thirualan"),
           Text("024 3243649"),
           Text("Vavuniya"),
           new Divider(
-            color: Color(0xFFe25d5b),
+            color: Color(0xFF3da4ab),
             height: 1.0,
           ),
           new Divider(
-            color: Color(0xFFe25d5b),
+            color: Color(0xFF3da4ab),
             height: 1.0,
           ),
           Text("Dr. P N C Fernando"),
           Text("025 2226875"),
           Text("Anuradhapura"),
           new Divider(
-            color: Color(0xFFe25d5b),
+            color: Color(0xFF3da4ab),
             height: 1.0,
           ),
           Text("Dr. G. Karawita"),
           Text("025 2225976"),
           Text("Anuradhapura"),
           new Divider(
-            color: Color(0xFFe25d5b),
+            color: Color(0xFF3da4ab),
             height: 1.0,
           ),
           Text("Dr. S.Gowrithilagan"),
@@ -291,7 +291,7 @@ class _Detect2State extends State<Detect2> {
       ),
       actions: <Widget>[
               RaisedButton(
-                color: Color(0xFFe25d5b),
+                color: Color(0xFF3da4ab),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -311,35 +311,35 @@ class _Detect2State extends State<Detect2> {
           Text("025 2225976"),
           Text("Anuradhapura"),
           new Divider(
-            color: Color(0xFFe25d5b),
+            color: Color(0xFF3da4ab),
             height: 1.0,
           ),
           Text("Dr. G. Karawita"),
           Text("025 2225976"),
           Text("Anuradhapura"),
           new Divider(
-            color: Color(0xFFe25d5b),
+            color: Color(0xFF3da4ab),
             height: 1.0,
           ),
           Text("Dr. G. Karawita"),
           Text("025 2225976"),
           Text("Anuradhapura"),
           new Divider(
-            color: Color(0xFFe25d5b),
+            color: Color(0xFF3da4ab),
             height: 1.0,
           ),
           Text("Dr. G. Karawita"),
           Text("025 2225976"),
           Text("Anuradhapura"),
           new Divider(
-            color: Color(0xFFe25d5b),
+            color: Color(0xFF3da4ab),
             height: 1.0,
           ),
           Text("Dr. G. Karawita"),
           Text("025 2225976"),
           Text("Anuradhapura"),
           new Divider(
-            color: Color(0xFFe25d5b),
+            color: Color(0xFF3da4ab),
             height: 1.0,
           ),
         ],
@@ -379,7 +379,7 @@ class _Detect2State extends State<Detect2> {
       ),
       actions: <Widget>[
         RaisedButton(
-          color: Color(0xFFe25d5b),
+          color: Color(0xFF3da4ab),
           onPressed: () {
             Navigator.of(context).pop();
           },
