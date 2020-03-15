@@ -42,8 +42,6 @@ class _Detect2State extends State<Detect2> {
     {'name': 'Jimmy, Acral lick dermatitis', 'group': 'December, 2019'},
     {'name': 'Jimmy, Heart Trouble', 'group': 'December, 2019'},
     {'name': 'Jimmy, Weak Breath', 'group': 'December, 2019'},
-    {'name': 'Jimmy, Dry Nose', 'group': 'November, 2019'},
-    {'name': 'Jimmy, Ringworm', 'group': 'November, 2019'},
 
 
   ];
