@@ -15,9 +15,8 @@
         android:label="vettest2"
         android:icon="@mipmap/ic_launcher">
 
-        <meta-data
-            android:name="com.google.firebase.ml.vision.DEPENDENCIES"
-            android:value="label" />
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDwpowAtWScfXCDOq2fwJvXJHbH1k0KxuY"/>
 
         <activity
             android:name=".MainActivity"

@@ -4,6 +4,8 @@ import 'login.dart';
 import 'sign_up.dart';
 import 'detect2.dart';
 import 'controller.dart';
+import 'maps/map_demo.dart';
+import 'maps/marker_icons.dart';
 
 void main()
 {
@@ -34,6 +36,9 @@ void main()
       // When navigating to the "/second" route, build the SecondScreen widget.
       '/vet': (context) => Detect2(),
       '/monitor': (context) => Controller(),
+      '/mapDemo': (context) => MapsDemo(),
+      '/markIcon': (context) => MarkerIconsPage(),
+
     },
 
 

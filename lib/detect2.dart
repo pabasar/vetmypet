@@ -422,6 +422,22 @@ class _Detect2State extends State<Detect2> {
               padding: EdgeInsets.fromLTRB(0, 0, 15, 15),
               child:
               FloatingActionButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/markIcon');
+                  // Perform some action
+                },
+                tooltip: 'Vet Locations',
+                child: Icon(Icons.location_on,color: Colors.white,),
+              ),)
+        ),
+
+
+        Align(
+            alignment: Alignment.bottomRight,
+            child: Container(
+              padding: EdgeInsets.fromLTRB(0, 0, 15, 15),
+              child:
+              FloatingActionButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/monitor');
                     // Perform some action
