@@ -1,10 +1,3 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-// ignore_for_file: public_member_api_docs
-// ignore_for_file: unawaited_futures
-
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -26,7 +19,12 @@ class MarkerIconsBody extends StatefulWidget {
   State<StatefulWidget> createState() => MarkerIconsBodyState();
 }
 
-const LatLng _kMapCenter = LatLng(8.754203, 80.498238);
+const LatLng _kMapCenter = LatLng(8.696711, 80.482685);
+const LatLng _kMapCenter2 = LatLng(8.76293836, 80.48998117);
+const LatLng _kMapCenter3 = LatLng(8.762493, 80.49245954);
+const LatLng _kMapCenter4 = LatLng(8.76302319, 80.48862398);
+const LatLng _kMapCenter5 = LatLng(8.75790691, 80.48736334);
+const LatLng _kMapCenter6 = LatLng(8.75094019, 80.50111234);
 
 class MarkerIconsBodyState extends State<MarkerIconsBody> {
   GoogleMapController controller;
@@ -46,7 +44,7 @@ class MarkerIconsBodyState extends State<MarkerIconsBody> {
             child: GoogleMap(
               initialCameraPosition: const CameraPosition(
                 target: _kMapCenter,
-                zoom: 7.0,
+                zoom: 20.0,
               ),
               markers: _createMarker(),
               onMapCreated: _onMapCreated,
@@ -65,6 +63,31 @@ class MarkerIconsBodyState extends State<MarkerIconsBody> {
       Marker(
         markerId: MarkerId("marker_1"),
         position: _kMapCenter,
+        icon: _markerIcon,
+      ),
+      Marker(
+        markerId: MarkerId("marker_2"),
+        position: _kMapCenter2,
+        icon: _markerIcon,
+      ),
+      Marker(
+        markerId: MarkerId("marker_3"),
+        position: _kMapCenter3,
+        icon: _markerIcon,
+      ),
+      Marker(
+        markerId: MarkerId("marker_4"),
+        position: _kMapCenter4,
+        icon: _markerIcon,
+      ),
+      Marker(
+        markerId: MarkerId("marker_5"),
+        position: _kMapCenter5,
+        icon: _markerIcon,
+      ),
+      Marker(
+        markerId: MarkerId("marker_6"),
+        position: _kMapCenter6,
         icon: _markerIcon,
       ),
     ].toSet();

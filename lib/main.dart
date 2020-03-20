@@ -53,7 +53,7 @@ void main()
       accentColor: Color(0xFF03a678),
       fontFamily: 'WorkSans',
     ),
-    title: "Fido",
+    title: "Vet My Pet",
     //home: new Login(),
     home: Login(),
   ));
