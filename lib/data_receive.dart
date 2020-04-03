@@ -244,7 +244,7 @@ class _DataReceive extends State<DataReceive> {
           context: context,
           type: AlertType.error,
           title: "Not healthy",
-          desc: t3.toString()+" celcius\n"+msg)
+          desc: t3.toString()+" Celsius\n"+msg)
           .show();
     }
     else if(t1>=56 && t1<=57)
@@ -255,7 +255,7 @@ class _DataReceive extends State<DataReceive> {
           context: context,
           type: AlertType.success,
           title: "Healthy",
-          desc: t3.toString()+" celcius\n"+msg)
+          desc: t3.toString()+" Celsius\n"+msg)
           .show();
     }
     else if(t1>=48 && t1<=52)
@@ -266,7 +266,7 @@ class _DataReceive extends State<DataReceive> {
           context: context,
           type: AlertType.error,
           title: "Not Healthy",
-          desc: t3.toString()+" celcius\n"+msg)
+          desc: t3.toString()+" Celsius\n"+msg)
           .show();
     }
     else

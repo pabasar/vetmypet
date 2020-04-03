@@ -37,14 +37,17 @@ class MarkerIconsBodyState extends State<MarkerIconsBody> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
+        AppBar(
+          title: Text('Nearby Vets',style: new TextStyle(fontWeight: FontWeight.bold),),centerTitle: true,
+        ),
         Center(
           child: SizedBox(
             width: 350.0,
             height: 700.0,
             child: GoogleMap(
               initialCameraPosition: const CameraPosition(
-                target: _kMapCenter,
-                zoom: 20.0,
+                target: _kMapCenter2,
+                zoom: 100.0,
               ),
               markers: _createMarker(),
               onMapCreated: _onMapCreated,

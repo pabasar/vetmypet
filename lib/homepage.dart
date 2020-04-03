@@ -262,7 +262,7 @@ class HomePageState extends State<HomePage> {
         new charts.ChartTitle('Time',
             behaviorPosition: charts.BehaviorPosition.bottom,
             titleOutsideJustification:charts.OutsideJustification.middleDrawArea),
-        new charts.ChartTitle('Temperature Celcius',
+        new charts.ChartTitle('Temperature Celsius',
             behaviorPosition: charts.BehaviorPosition.start,
             titleOutsideJustification: charts.OutsideJustification.middleDrawArea),
         new charts.ChartTitle('',
