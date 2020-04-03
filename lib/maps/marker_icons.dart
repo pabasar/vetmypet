@@ -47,7 +47,7 @@ class MarkerIconsBodyState extends State<MarkerIconsBody> {
             child: GoogleMap(
               initialCameraPosition: const CameraPosition(
                 target: _kMapCenter2,
-                zoom: 100.0,
+                zoom: 12.0,
               ),
               markers: _createMarker(),
               onMapCreated: _onMapCreated,
