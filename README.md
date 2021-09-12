@@ -7,3 +7,8 @@ To transfer health data from device to mobile phone flutter-blutooth-serial codi
 Images were taken from https://www.freepik.com
 
 ![device](https://user-images.githubusercontent.com/49782156/132990096-088aaa3b-0f42-48e1-8ee0-69008755ca83.png)
+
+![1](https://user-images.githubusercontent.com/49782156/132990322-8a38eb62-ee7a-4c83-9a0c-0e65e3c40a78.png)
+![2](https://user-images.githubusercontent.com/49782156/132990328-cc7d1789-889c-4381-a919-18c4f6b21cb1.png)
+![3](https://user-images.githubusercontent.com/49782156/132990334-918233bb-1ca9-4889-a3a5-f769162c199d.png)
+
