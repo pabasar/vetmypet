@@ -5,3 +5,5 @@ Unlike human beings, dogs are not able to express the physical disorders or sick
 
 To transfer health data from device to mobile phone flutter-blutooth-serial codings were used https://pub.dev/packages/flutter_bluetooth_serial. 
 Images were taken from https://www.freepik.com
+
+![device](https://user-images.githubusercontent.com/49782156/132990096-088aaa3b-0f42-48e1-8ee0-69008755ca83.png)
